@@ -10,7 +10,9 @@ def SAlign(Str1,Str2,Penalty,d):
     #list_as_array = np.array(dp)
     #print(list_as_array)
     print(dp[m][n])
+    print()
     print(tb)
+    print()
     print(dp)
     traceback(tb,dp,Str1,Str2,m,n)
 
