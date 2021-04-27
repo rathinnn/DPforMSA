@@ -3,8 +3,8 @@ from SA.SingleAlign import SAlign
 Penalty = [[0,4,2,4],[4,0,4,2],[2,4,0,4],[4,2,4,0]]
 d = 8
 
-S1 = "AGT"
-S2 = "AAGC"
+S1 = "AATT"
+S2 = "AGT"
 
 SAlign(S1,S2,Penalty,d)
 
