@@ -2,8 +2,8 @@ import numpy as np
 def SAlign(Str1,Str2,Penalty,d):
     m = len(Str1)
     n = len(Str2)
-    dp = np.zeros((m+1,n+1),dtype = int)
-    tb = np.zeros((m+1,n+1),dtype = int)
+    dp = np.zeros((m+1,n+1), dtype = int)
+    tb = np.zeros((m+1,n+1), dtype = int)
     
     initiallize(dp, d, m, n, tb)
     iterate(dp, d, m, n, Penalty, Str1,Str2,tb)
