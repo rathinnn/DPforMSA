@@ -22,6 +22,8 @@ def MAlign(AStrings,Penalty,d,usePenal):
     #print(memo.shape)
     #print(nindexes)
     print(Strmemo[tuple(nindexes)])
+    print(memo[tuple(nindexes)])
+    #print(memo)
     f = open("out.txt", "w")
     f.write(str(Strmemo[tuple(nindexes)]))
     f.close()
@@ -45,6 +47,7 @@ def Align(Penalty,memo,indexes,Strings,RetStrings,d,Strmemo,usePenal):
         Strmemo[indexes] = ['_']*len(indexes)
         Strmemo[indexes][theString] = Strings[theString][0:check]
         #print(Strmemo[indexes] )
+        #print(memo)
         return check*d*(len(indexes)-1)
 
     #print(str(indexes)+'--')
@@ -86,7 +89,7 @@ def Align(Penalty,memo,indexes,Strings,RetStrings,d,Strmemo,usePenal):
                     #print(getPenalty(Penalty,indexes,ind,Strings,usePenal))
                     minval = newval
                     minchar = ind
-                    mind = newindex
+                    #mind = newindex
                     minStrsaved = Strmemo[newindex]
                 #else:
                     #print(newval ,end = '----==============================3 ')
@@ -101,14 +104,14 @@ def Align(Penalty,memo,indexes,Strings,RetStrings,d,Strmemo,usePenal):
                     #print(getPenalty(Penalty,indexes,ind,Strings,usePenal))
                     minval = newval
                     minchar = ind
-                    mind = newindex
+                    #mind = newindex
                     minStrsaved = Strmemo[newindex]
                 #else:
                     #print(newval ,end = '----==============================4 ')
                     #print()
         
-    minStr = Strmemo[mind]
-    
+    #minStr = Strmemo[mind]
+    minStr = minStrsaved
     memo[indexes] = minval
     #print(minval)
     newStr = []
