@@ -42,14 +42,25 @@ from MSA.MultipleAlign import verify
 import ast
 n = int(sys.argv[1])
 d = int(sys.argv[2])
-Penalty = ast.literal_eval(sys.argv[3])
-print(Penalty)
-if Penalty == []:
-    usePenal = False
-else:
+
+check = sys.argv[3]
+if(check != 'X'):
+    matrixar = sys.argv[3].split(',')
+    #Penalty = [[0] * 5]*5
+    Penalty = [ [ 0 for i in range(5) ] for j in range(5) ]
+
+    c = 0
+    for i in range(5):
+        for j in range(5):
+            Penalty[i][j] = int(matrixar[c])
+            c+=1
+        
+    #Penalty = ast.literal_eval(sys.argv[3])
+    print(Penalty)
     usePenal = True
-print(sys.argv[4])
-print(type(sys.argv[4]))
-Strings = ast.literal_eval( sys.argv[4] )
+else:
+    usePenal = False
+    Penalty = []
+Strings = sys.argv[4].split(',')
 MAlign(Strings,Penalty,d,usePenal)
 #print(verify(Strings,Penalty,usePenal))
