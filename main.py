@@ -18,18 +18,18 @@ from MSA.MultipleAlign import verify
 #print()
 #d = 1
 #Penalty = [[0,1,1,1,1],[d,0,1,1,1],[d,1,0,1,1],[d,1,1,0,1],[d,1,1,1,0]]
-#d = 8
-#Penalty = [[0,8,8,8,8],[8,0,4,2,4],[8,4,0,4,2],[8,2,4,0,4],[8,4,2,4,0]]
+d = 8
+Penalty = [[0,8,8,8,8],[8,0,4,2,4],[8,4,0,4,2],[8,2,4,0,4],[8,4,2,4,0]]
 
 
-#S1 = "GARFIELDTHELASTFATCAT"
-#S2 = "GARFIELDTHEFASTCAT"
-#S3 = "GARFIELDTHEVERYFASTCAT"
-#S4 = "THEFATCAT"
-#S5 = "GARFIELDTHEVASTCAT"
+S1 = "GARFIELDTHELASTFATCAT"
+S2 = "GARFIELDTHEFASTCAT"
+S3 = "GARFIELDTHEVERYFASTCAT"
+S4 = "THEFATCAT"
+S5 = "GARFIELDTHEVASTCAT"
 #S1 = "TACGTCAGC"
 #S2 = "TATGTCATGC"
-#MAlign([S1,S2],Penalty,d,True)
+MAlign([S1,S2],Penalty,d,True)
 #MAlign([S1,S2,S3,S4,S5],Penalty,d,False)
 
 #print()
@@ -39,7 +39,7 @@ from MSA.MultipleAlign import verify
 #print(verify(RV,Penalty,False))
 #K = ['__','GA']
 #print(verify(K,Penalty,False))
-import ast
+'''import ast
 n = int(sys.argv[1])
 d = int(sys.argv[2])
 
@@ -62,5 +62,5 @@ else:
     usePenal = False
     Penalty = []
 Strings = sys.argv[4].split(',')
-MAlign(Strings,Penalty,d,usePenal)
+MAlign(Strings,Penalty,d,usePenal)'''
 #print(verify(Strings,Penalty,usePenal))
