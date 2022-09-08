@@ -20,13 +20,11 @@ def iterate(dp,d,m,n,Penalty,Str1,Str2,tb):
     
     Index = {'A':0, 'C':1, 'G':2, 'T':3}
 
-
     for i in range(1, m+1):
         for j in range(1, n+1):
             costindex1 = Index[Str1[i - 1]]
             costindex2 = Index[Str2[j - 1]]
             (dp[i][j], tb[i][j]) = custommin( dp[i - 1][j] + d, dp[i][j - 1] + d, dp[i - 1][j - 1] + Penalty[costindex1][costindex2])
-
 
 def custommin(a,b,c):
     if(a < b):
@@ -40,9 +38,6 @@ def custommin(a,b,c):
             return (b, 0)
         else:
             return (c, 1)
-
-
-
 
 def initiallize(dp, d, m, n, tb):
     for i in range(1, m + 1):
@@ -70,7 +65,6 @@ def traceback(tb, dp, Str1, Str2, m, n):
     print(retStr1)
     print(retStr2)
 
-
 def selectOp(Str1, retStr1, Str2, retStr2, minop, i, j):
     if(minop == -1):
         #print('Here')
@@ -90,10 +84,3 @@ def selectOp(Str1, retStr1, Str2, retStr2, minop, i, j):
         j = j-1
     
     return(retStr1, retStr2, i, j)
-
-
-
-    
-
-
-
